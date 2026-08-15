@@ -1,3 +1,5 @@
+
+
 # ganim8
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/yohamta/ganim8/v2.svg)](https://pkg.go.dev/github.com/yohamta/ganim8/v2)
@@ -81,7 +83,7 @@ Grids only have one important method: `Grid.Frames(...)`.
 `Grid.Frames` accepts an arbitrary number of parameters. They can be either numbers or strings.
 
 * Each two numbers are interpreted as quad coordinates in the format `(column, row)`. This way, `grid.Frames(3,4)` will return the frame in column 3, row 4 of the grid. There can be more than just two: `grid.Frames(1,1, 1,2, 1,3)` will return the frames in {1,1}, {1,2} and {1,3} respectively.
-* Using numbers for long rows or columns is tedious - so grids also accept strings indicating range plus a row/column index. Diferentiating rows and columns is based on the order in which the range and index are provided. A row can be fetch by calling `grid.Frames("range", rowNumber)` and a column by calling `grid.Frames(columnNumber, "range")`. The previous column of 3 elements, for example, can be also expressed like this: `grid.Frames(1,"1-3")`. Again, there can be more than one string-index pair (`grid.Frames(1,"1-3", "2-4",3)`)
+* Using numbers for long rows or columns is tedious - so grids also accept strings indicating range plus a row/column index. Differentiating rows and columns is based on the order in which the range and index are provided. A row can be fetched by calling `grid.Frames("range", rowNumber)` and a column by calling `grid.Frames(columnNumber, "range")`. The previous column of 3 elements, for example, can be also expressed like this: `grid.Frames(1,"1-3")`. Again, there can be more than one string-index pair (`grid.Frames(1,"1-3", "2-4",3)`)
 * It's also possible to combine both formats. For example: `grid.Frames(1,4, 1,"1-3")` will get the frame in {1,4} plus the frames 1 to 3 in column 1
 
 Let's consider the submarine in the previous example. It has 7 frames, arranged horizontally.
